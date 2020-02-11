@@ -19,12 +19,19 @@ void execute(char* code, int lenght) {
     while (pos < lenght) {  // Check if we have reached the end or not.
         switch(code[pos]) {
 
-            case EXIT:
+            case EXIT: {
                 exit(0);
+            }
 
-            case EXITR:
+            case EXITR: {
                 int r_code = int(code[pos]);
                 exit(r_code);
+            }
+
+            default: {
+                std::cout << "Error: Unknown Instructions";
+                exit(-1);
+            }
 
         }
 
